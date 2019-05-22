@@ -1,13 +1,13 @@
 pragma solidity ^0.5.0;
 
 contract SimpleStorage {
-  uint storedData;
+  string public ipfsHash; // this will be the encrypted location of the file - Basil
 
-  function set(uint x) public {
-    storedData = x;
+  function set(string memory x) public {
+    ipfsHash = x;
   }
 
-  function get() public view returns (uint) {
-    return storedData;
+  function get() public view returns (string memory) { // need to make the return parameters explicitly "memory" - Basil
+    return ipfsHash;
   }
 }
